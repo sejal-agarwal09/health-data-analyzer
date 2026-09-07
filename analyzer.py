@@ -74,6 +74,25 @@ def show_correlation_matrix():
 
     print(correlations.round(2))
     
+def show_distribution():
+    print()
+    print("Distribution Analysis")
+    print()
+    print("BMI:")
+    print(data["BMI"].describe().round(2))
+
+    print()
+    print("Sleep Hours:")
+    print(data["Sleep_Hours"].describe().round(2))
+
+    print()
+    print("Exercise Hours:")
+    print(data["Exercise_Hours"].describe().round(2))
+
+    print()
+    print("Heart Rate:")
+    print(data["Heart_Rate"].describe().round(2))
+
 def show_averages():
     print()
     print("BMI")
@@ -141,7 +160,8 @@ while True:
     print("6. Validate data")
     print("7. View age analysis")
     print("8. View correlation matrix")
-    print("9. Exit")
+    print("9. View distributions")
+    print("10. Exit")
 
     choice = input("Choose an option: ")
 
@@ -162,7 +182,9 @@ while True:
     elif choice == "8":
         show_correlation_matrix()
     elif choice == "9":
+        show_distribution()
+    elif choice == "10":
         print("Goodbye!")
         break
     else:
-        print("Please choose a number from 1 to 9.")
+        print("Please choose a number from 1 to 10.")
