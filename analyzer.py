@@ -162,10 +162,7 @@ def show_correlations():
     print("Exercise vs. BMI:",
           round(data["Exercise_Hours"].corr(data["BMI"]), 2))
 
-
-print("Health Data Analyzer")
-
-while True:
+def show_menu():
     print()
     print("1. View summary statistics")
     print("2. View dataset information")
@@ -179,7 +176,11 @@ while True:
     print("10. View histograms")
     print("11. Exit")
 
-    choice = input("Choose an option: ")
+print("Health Data Analyzer")
+
+while True:
+    show_menu()
+    choice = input("Choose an option: ").strip()
 
     if choice == "1":
         show_averages()
