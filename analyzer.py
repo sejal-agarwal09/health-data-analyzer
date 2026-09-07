@@ -3,6 +3,20 @@ import matplotlib.pyplot as plt
 
 data = pd.read_csv("health_data.csv")
 
+def show_dataset_info():
+    print()
+    print("Dataset Information")
+    print("Number of records:", len(data))
+    print("Number of variables:", len(data.columns))
+
+    print()
+    print("Variables:")
+    for column in data.columns:
+        print("-", column)
+
+    print()
+    print("Missing values:")
+    print(data.isnull().sum())
 
 def show_averages():
     print()
@@ -63,24 +77,27 @@ print("Health Data Analyzer")
 
 while True:
     print()
-    print("1. View average statistics")
-    print("2. View sleep and heart rate graph")
-    print("3. View exercise and BMI graph")
-    print("4. View correlations")
-    print("5. Exit")
+    print("1. View summary statistics")
+    print("2. View dataset information")
+    print("3. View sleep and heart rate graph")
+    print("4. View exercise and BMI graph")
+    print("5. View correlations")
+    print("6. Exit")
 
     choice = input("Choose an option: ")
 
     if choice == "1":
         show_averages()
     elif choice == "2":
-        show_sleep_graph()
+        show_dataset_info()
     elif choice == "3":
-        show_exercise_graph()
+        show_sleep_graph()
     elif choice == "4":
-        show_correlations()
+        show_exercise_graph()
     elif choice == "5":
+        show_correlations()
+    elif choice == "6":
         print("Goodbye!")
         break
     else:
-        print("Please choose a number from 1 to 5.")
+        print("Please choose a number from 1 to 6.")
