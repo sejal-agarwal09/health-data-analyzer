@@ -22,3 +22,8 @@ plt.xlabel("Exercise (hours)")
 plt.ylabel("BMI")
 plt.title("Exercise vs. BMI")
 plt.show()
+
+print()
+print("Correlations:")
+print("Sleep vs. Heart Rate:", round(data["Sleep_Hours"].corr(data["Heart_Rate"]), 2))
+print("Exercise vs. BMI:", round(data["Exercise_Hours"].corr(data["BMI"]), 2))
