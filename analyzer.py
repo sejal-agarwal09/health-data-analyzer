@@ -48,6 +48,21 @@ def validate_data():
 
     print("Data validation complete.")
 
+def show_age_analysis():
+    print()
+    print("Age Group Analysis")
+
+    for age in sorted(data["Age"].unique()):
+        group = data[data["Age"] == age]
+
+        print()
+        print("Age", age)
+        print("  Records:", len(group))
+        print("  Average BMI:", round(group["BMI"].mean(), 2))
+        print("  Average Sleep:", round(group["Sleep_Hours"].mean(), 2))
+        print("  Average Exercise:", round(group["Exercise_Hours"].mean(), 2))
+        print("  Average Heart Rate:", round(group["Heart_Rate"].mean(), 2))
+
 def show_averages():
     print()
     print("BMI")
@@ -113,7 +128,8 @@ while True:
     print("4. View exercise and BMI graph")
     print("5. View correlations")
     print("6. Validate data")
-    print("7. Exit")
+    print("7. View age analysis")
+    print("8. Exit")
 
     choice = input("Choose an option: ")
 
@@ -130,7 +146,9 @@ while True:
     elif choice == "6":
         validate_data()
     elif choice == "7":
+        show_age_analysis()
+    elif choice == "8":
         print("Goodbye!")
         break
     else:
-        print("Please choose a number from 1 to 7.")
+        print("Please choose a number from 1 to 8.")
