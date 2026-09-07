@@ -188,36 +188,42 @@ def show_overall_summary():
     print("Average Exercise:", round(data["Exercise_Hours"].mean(), 2))
     print("Average Heart Rate:", round(data["Heart_Rate"].mean(), 2))
 
-print("Health Data Analyzer")
+def main():
+    print("Health Data Analyzer")
 
-while True:
-    show_menu()
-    choice = input("Choose an option: ").strip()
+    while True:
+        show_menu()
 
-    if choice == "1":
-        show_overall_summary()
-    elif choice == "2":
-        show_averages()
-    elif choice == "3":
-        show_dataset_info()
-    elif choice == "4":
-        show_sleep_graph()
-    elif choice == "5":
-        show_exercise_graph()
-    elif choice == "6":
-        show_correlations()
-    elif choice == "7":
-        validate_data()
-    elif choice == "8":
-        show_age_analysis()
-    elif choice == "9":
-        show_correlation_matrix()
-    elif choice == "10":
-        show_distribution()
-    elif choice == "11":
-        show_histograms()
-    elif choice == "12":
-        print("Goodbye!")
-        break
-    else:
-        print("Please choose a number from 1 to 12.")
+        choice = input("Choose an option: ").strip()
+
+        if choice == "1":
+            show_overall_summary()
+        elif choice == "2":
+            show_averages()
+        elif choice == "3":
+            show_dataset_info()
+        elif choice == "4":
+            show_sleep_graph()
+        elif choice == "5":
+            show_exercise_graph()
+        elif choice == "6":
+            show_correlations()
+        elif choice == "7":
+            validate_data()
+        elif choice == "8":
+            show_age_analysis()
+        elif choice == "9":
+            show_correlation_matrix()
+        elif choice == "10":
+            show_distribution()
+        elif choice == "11":
+            show_histograms()
+        elif choice == "12":
+            print("Goodbye!")
+            break
+        else:
+            print("Please choose a number from 1 to 12.")
+
+
+if __name__ == "__main__":
+    main()
