@@ -63,6 +63,17 @@ def show_age_analysis():
         print("  Average Exercise:", round(group["Exercise_Hours"].mean(), 2))
         print("  Average Heart Rate:", round(group["Heart_Rate"].mean(), 2))
 
+def show_correlation_matrix():
+    print()
+    print("Correlation Matrix")
+    print()
+
+    correlations = data[
+        ["Age", "BMI", "Sleep_Hours", "Exercise_Hours", "Heart_Rate"]
+    ].corr()
+
+    print(correlations.round(2))
+    
 def show_averages():
     print()
     print("BMI")
@@ -129,7 +140,8 @@ while True:
     print("5. View correlations")
     print("6. Validate data")
     print("7. View age analysis")
-    print("8. Exit")
+    print("8. View correlation matrix")
+    print("9. Exit")
 
     choice = input("Choose an option: ")
 
@@ -148,7 +160,9 @@ while True:
     elif choice == "7":
         show_age_analysis()
     elif choice == "8":
+        show_correlation_matrix()
+    elif choice == "9":
         print("Goodbye!")
         break
     else:
-        print("Please choose a number from 1 to 8.")
+        print("Please choose a number from 1 to 9.")
