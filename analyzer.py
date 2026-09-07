@@ -93,6 +93,21 @@ def show_distribution():
     print("Heart Rate:")
     print(data["Heart_Rate"].describe().round(2))
 
+def show_histograms():
+    variables = [
+        ("BMI", "BMI Distribution"),
+        ("Sleep_Hours", "Sleep Hours Distribution"),
+        ("Exercise_Hours", "Exercise Hours Distribution"),
+        ("Heart_Rate", "Heart Rate Distribution")
+    ]
+
+    for column, title in variables:
+        plt.hist(data[column], bins=6)
+        plt.xlabel(column)
+        plt.ylabel("Number of Records")
+        plt.title(title)
+        plt.show()
+
 def show_averages():
     print()
     print("BMI")
@@ -161,7 +176,8 @@ while True:
     print("7. View age analysis")
     print("8. View correlation matrix")
     print("9. View distributions")
-    print("10. Exit")
+    print("10. View histograms")
+    print("11. Exit")
 
     choice = input("Choose an option: ")
 
@@ -184,7 +200,9 @@ while True:
     elif choice == "9":
         show_distribution()
     elif choice == "10":
+        show_histograms()
+    elif choice == "11":
         print("Goodbye!")
         break
     else:
-        print("Please choose a number from 1 to 10.")
+        print("Please choose a number from 1 to 11.")
