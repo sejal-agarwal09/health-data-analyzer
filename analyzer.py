@@ -18,6 +18,36 @@ def show_dataset_info():
     print("Missing values:")
     print(data.isnull().sum())
 
+def validate_data():
+    print()
+    print("Data Validation")
+
+    expected_columns = [
+        "Age",
+        "BMI",
+        "Sleep_Hours",
+        "Exercise_Hours",
+        "Heart_Rate"
+    ]
+
+    missing_columns = []
+
+    for column in expected_columns:
+        if column not in data.columns:
+            missing_columns.append(column)
+
+    if len(missing_columns) == 0:
+        print("All expected variables are present.")
+    else:
+        print("Missing variables:", missing_columns)
+
+    if data.isnull().sum().sum() == 0:
+        print("No missing values found.")
+    else:
+        print("Missing values were found.")
+
+    print("Data validation complete.")
+
 def show_averages():
     print()
     print("BMI")
@@ -82,7 +112,8 @@ while True:
     print("3. View sleep and heart rate graph")
     print("4. View exercise and BMI graph")
     print("5. View correlations")
-    print("6. Exit")
+    print("6. Validate data")
+    print("7. Exit")
 
     choice = input("Choose an option: ")
 
@@ -97,7 +128,9 @@ while True:
     elif choice == "5":
         show_correlations()
     elif choice == "6":
+        validate_data()
+    elif choice == "7":
         print("Goodbye!")
         break
     else:
-        print("Please choose a number from 1 to 6.")
+        print("Please choose a number from 1 to 7.")
