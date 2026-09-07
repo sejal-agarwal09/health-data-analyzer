@@ -6,10 +6,32 @@ data = pd.read_csv("health_data.csv")
 
 def show_averages():
     print()
-    print("Average BMI:", round(data["BMI"].mean(), 2))
-    print("Average Sleep:", round(data["Sleep_Hours"].mean(), 2))
-    print("Average Exercise:", round(data["Exercise_Hours"].mean(), 2))
-    print("Average Heart Rate:", round(data["Heart_Rate"].mean(), 2))
+    print("BMI")
+    print("  Average:", round(data["BMI"].mean(), 2))
+    print("  Minimum:", round(data["BMI"].min(), 2))
+    print("  Maximum:", round(data["BMI"].max(), 2))
+    print("  Median:", round(data["BMI"].median(), 2))
+
+    print()
+    print("Sleep")
+    print("  Average:", round(data["Sleep_Hours"].mean(), 2))
+    print("  Minimum:", round(data["Sleep_Hours"].min(), 2))
+    print("  Maximum:", round(data["Sleep_Hours"].max(), 2))
+    print("  Median:", round(data["Sleep_Hours"].median(), 2))
+
+    print()
+    print("Exercise")
+    print("  Average:", round(data["Exercise_Hours"].mean(), 2))
+    print("  Minimum:", round(data["Exercise_Hours"].min(), 2))
+    print("  Maximum:", round(data["Exercise_Hours"].max(), 2))
+    print("  Median:", round(data["Exercise_Hours"].median(), 2))
+
+    print()
+    print("Heart Rate")
+    print("  Average:", round(data["Heart_Rate"].mean(), 2))
+    print("  Minimum:", round(data["Heart_Rate"].min(), 2))
+    print("  Maximum:", round(data["Heart_Rate"].max(), 2))
+    print("  Median:", round(data["Heart_Rate"].median(), 2))
 
 
 def show_sleep_graph():
