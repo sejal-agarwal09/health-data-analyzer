@@ -164,17 +164,29 @@ def show_correlations():
 
 def show_menu():
     print()
-    print("1. View summary statistics")
-    print("2. View dataset information")
-    print("3. View sleep and heart rate graph")
-    print("4. View exercise and BMI graph")
-    print("5. View correlations")
-    print("6. Validate data")
-    print("7. View age analysis")
-    print("8. View correlation matrix")
-    print("9. View distributions")
-    print("10. View histograms")
-    print("11. Exit")
+    print("1. View overall summary")
+    print("2. View summary statistics")
+    print("3. View dataset information")
+    print("4. View sleep and heart rate graph")
+    print("5. View exercise and BMI graph")
+    print("6. View correlations")
+    print("7. Validate data")
+    print("8. View age analysis")
+    print("9. View correlation matrix")
+    print("10. View distributions")
+    print("11. View histograms")
+    print("12. Exit")
+
+def show_overall_summary():
+    print()
+    print("Overall Dataset Summary")
+    print("-----------------------")
+    print("Records:", len(data))
+    print("Average Age:", round(data["Age"].mean(), 2))
+    print("Average BMI:", round(data["BMI"].mean(), 2))
+    print("Average Sleep:", round(data["Sleep_Hours"].mean(), 2))
+    print("Average Exercise:", round(data["Exercise_Hours"].mean(), 2))
+    print("Average Heart Rate:", round(data["Heart_Rate"].mean(), 2))
 
 print("Health Data Analyzer")
 
@@ -183,27 +195,29 @@ while True:
     choice = input("Choose an option: ").strip()
 
     if choice == "1":
-        show_averages()
+        show_overall_summary()
     elif choice == "2":
-        show_dataset_info()
+        show_averages()
     elif choice == "3":
-        show_sleep_graph()
+        show_dataset_info()
     elif choice == "4":
-        show_exercise_graph()
+        show_sleep_graph()
     elif choice == "5":
-        show_correlations()
+        show_exercise_graph()
     elif choice == "6":
-        validate_data()
+        show_correlations()
     elif choice == "7":
-        show_age_analysis()
+        validate_data()
     elif choice == "8":
-        show_correlation_matrix()
+        show_age_analysis()
     elif choice == "9":
-        show_distribution()
+        show_correlation_matrix()
     elif choice == "10":
-        show_histograms()
+        show_distribution()
     elif choice == "11":
+        show_histograms()
+    elif choice == "12":
         print("Goodbye!")
         break
     else:
-        print("Please choose a number from 1 to 11.")
+        print("Please choose a number from 1 to 12.")
