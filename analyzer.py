@@ -2,4 +2,10 @@ import pandas as pd
 
 data = pd.read_csv("health_data.csv")
 
-print(data)
+print("Health Data Analyzer")
+print()
+
+print("Average BMI:", round(data["BMI"].mean(), 2))
+print("Average Sleep:", round(data["Sleep_Hours"].mean(), 2))
+print("Average Exercise:", round(data["Exercise_Hours"].mean(), 2))
+print("Average Heart Rate:", round(data["Heart_Rate"].mean(), 2))
